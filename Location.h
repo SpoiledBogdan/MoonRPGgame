@@ -1,28 +1,28 @@
 #pragma once
+
+#ifndef LOCATION_H
+#define LOCATION_H
+
 #include "settings.h"
 #include "Entity.h"
 
+
 class Location : public Entity
 {
-protected:
-	//locations
-	std::vector<int> start;
-	std::vector<int> map1;
-
+public:
+	//tiles
 	Entity ground1;
 	Entity ground2;
 	Entity test;
 
 	std::vector<Entity> tileMap;
-public:
+	std::vector<int> numLocation;
+
+
 	Location();
 
-	int state;
-	int getState();
-	void setState(int locationState);
-
-	void DrawLocation(std::vector<int> location);
-	void DrawLoc1();
-	void DrawLoc2();
+	void Draw(std::vector<int> location);
 };
 
+
+#endif // !LOCATION_H

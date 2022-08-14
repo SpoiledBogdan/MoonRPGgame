@@ -4,19 +4,20 @@
 #define ENTITY_H
 
 #include "libs.h"
+#include "settings.h"
 
 
 class Entity
 {
-protected:
-	Vector2 position;
-	Texture2D texture;	
-	Rectangle rec; //rectangle 
 public:
-	Vector2 getPos(void);
-	void setPos(Vector2 newPosition);
+	Vector2 position;
+	Rectangle rec; //rectangle 
+	Texture2D texture;	
+
+
 	Entity();
 	Entity(std::string path);
+	Entity(std::string path, float x, float y);
 	void Draw();
 };
 

@@ -3,15 +3,31 @@
 
 Player::Player(std::string texturePath) :
 	Entity(texturePath),
-	speed(2.0f)
+	speed(4.0f)
 {
 }
 
 
 void Player::Move()
 {
-	if (IsKeyDown(KEY_D)) Entity::position.x += speed;
-	if (IsKeyDown(KEY_A)) Entity::position.x -= speed;
-	if (IsKeyDown(KEY_W)) Entity::position.y -= speed;
-	if (IsKeyDown(KEY_S)) Entity::position.y += speed;
+	if (IsKeyPressed(KEY_D))
+	{
+		position.x += settings::tileWidth;
+		rec.x += texture.width;
+	}
+	if (IsKeyPressed(KEY_A))
+	{
+		position.x -= speed;
+		rec.x -= GetFrameTime();
+	}
+	if (IsKeyPressed(KEY_W))
+	{
+		position.y -= speed;
+		rec.y -= GetFrameTime();
+	}
+	if (IsKeyPressed(KEY_S))
+	{
+		position.y += speed;
+		rec.y += GetFrameTime();
+	}
 }

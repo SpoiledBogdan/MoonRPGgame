@@ -9,9 +9,10 @@
 
 class Game
 {
-private:
-	Map map;
 public:
+	Map map;
+
+
 	Game(int fps);
 	~Game() noexcept;
 
@@ -21,5 +22,6 @@ public:
 	void Draw(); //draw smthng
 	void Tick(); //one iteration
 };
+
 
 #endif // !GAME_H
